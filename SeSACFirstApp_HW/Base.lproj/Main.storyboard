@@ -84,11 +84,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hat-x0-X6E">
-                                <rect key="frame" x="100" y="148" width="141.33333333333326" height="38"/>
+                                <rect key="frame" x="135" y="148" width="116" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="turquoise" title=" 모두의 인기 콘텐츠">
+                                <buttonConfiguration key="configuration" style="plain" title=" ">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="0.0"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -96,25 +96,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnu-Bh-zVq">
-                                <rect key="frame" x="235" y="148" width="141.33333333333326" height="38"/>
+                                <rect key="frame" x="261" y="148" width="116" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="pink" title=" TOP 10 시리즈">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="0.0"/>
-                                </buttonConfiguration>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="topTenClicked:" destination="G1r-rZ-VCA" eventType="touchUpInside" id="TZt-RB-bW1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyO-1a-gpM">
-                                <rect key="frame" x="-28" y="148" width="141.33333333333337" height="38"/>
+                                <rect key="frame" x="11" y="148" width="116" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="blue" title="공개 예정">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="0.0"/>
-                                </buttonConfiguration>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="comingSoonClicked:" destination="G1r-rZ-VCA" eventType="touchUpInside" id="fP4-9C-Zkm"/>
                                 </connections>
@@ -125,7 +121,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="NEW &amp; HOT 검색" id="KLZ-7o-dCT"/>
                     <connections>
-                        <outlet property="comingSoon" destination="AyO-1a-gpM" id="hcb-es-CiF"/>
+                        <outlet property="comingSoon" destination="AyO-1a-gpM" id="4QG-iX-6QZ"/>
                         <outlet property="firstText" destination="kA7-ku-hQt" id="4fQ-bK-gxg"/>
                         <outlet property="hotContents" destination="Hat-x0-X6E" id="dnW-Tm-MEB"/>
                         <outlet property="searchBar" destination="pgb-xB-NTN" id="92I-Do-HlT"/>
@@ -659,6 +655,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ik5-sZ-dKY">
                                 <rect key="frame" x="284" y="578" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="infoToggle:" destination="bPJ-kC-Tql" eventType="valueChanged" id="Zap-eb-bMq"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKH-H6-rok">
                                 <rect key="frame" x="61" y="541" width="270" height="21"/>
@@ -676,8 +675,8 @@
                         <outlet property="addInfo" destination="w5j-hT-ghS" id="xIb-co-sxM"/>
                         <outlet property="code" destination="yu9-fd-zCL" id="I9o-j4-Kwf"/>
                         <outlet property="conditionOfMember" destination="OKH-H6-rok" id="MMe-LI-ECM"/>
-                        <outlet property="emailOrNumber" destination="f5V-RK-F67" id="xhq-8N-Gne"/>
-                        <outlet property="joinMember" destination="E0v-ob-Uau" id="sxe-AZ-oMr"/>
+                        <outlet property="emailOrNumber" destination="f5V-RK-F67" id="1hu-kC-Ve1"/>
+                        <outlet property="joinMember" destination="E0v-ob-Uau" id="bCu-ts-wE0"/>
                         <outlet property="location" destination="pLo-1n-7fh" id="07P-fa-Oxh"/>
                         <outlet property="logo" destination="hVK-aI-ft8" id="Tqs-bv-gJM"/>
                         <outlet property="nickname" destination="vLd-dM-SEt" id="m5O-m9-pix"/>
@@ -712,12 +711,8 @@
                                 <rect key="frame" x="33" y="617" width="103" height="149"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="밀수" translatesAutoresizingMaskIntoConstraints="NO" id="5yO-29-kZ1">
-                                <rect key="frame" x="137" y="618" width="118" height="148"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="범죄도시3" translatesAutoresizingMaskIntoConstraints="NO" id="com-cX-KYR">
-                                <rect key="frame" x="257" y="618" width="103" height="148"/>
+                                <rect key="frame" x="257" y="618" width="103" height="149"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="top10 badge" translatesAutoresizingMaskIntoConstraints="NO" id="F6o-my-wcd">
@@ -734,26 +729,25 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pa7-qY-Sys">
                                 <rect key="frame" x="202" y="517" width="140" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="내가 찜한 리스트" image="plus" catalog="system">
+                                <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmL-Mz-6QO">
                                 <rect key="frame" x="54" y="517" width="140" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title=" 재생" image="play.fill" catalog="system">
-                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
-                                </state>
                                 <connections>
-                                    <action selector="playButton:" destination="x6m-dB-CR6" eventType="touchUpInside" id="bhS-AU-D3q"/>
+                                    <action selector="playButtonClickedWithSender:" destination="x6m-dB-CR6" eventType="touchUpInside" id="2LJ-Qt-UWs"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="single-badge" translatesAutoresizingMaskIntoConstraints="NO" id="AML-yv-eYs">
                                 <rect key="frame" x="261" y="620" width="17" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="밀수" translatesAutoresizingMaskIntoConstraints="NO" id="5yO-29-kZ1">
+                                <rect key="frame" x="144" y="617" width="103" height="149"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -779,23 +773,18 @@
     </scenes>
     <resources>
         <image name="arrow.down.circle" catalog="system" width="128" height="123"/>
-        <image name="blue" width="24" height="24"/>
         <image name="dummy" width="393" height="243"/>
         <image name="eraser" catalog="system" width="128" height="119"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="pink" width="24" height="24"/>
-        <image name="play.fill" catalog="system" width="117" height="128"/>
         <image name="play.rectangle.on.rectangle" catalog="system" width="128" height="98"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="rectangle.and.pencil.and.ellipsis" catalog="system" width="128" height="86"/>
         <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
         <image name="scribble" catalog="system" width="128" height="117"/>
         <image name="single-badge" width="8" height="15"/>
         <image name="square.and.pencil" catalog="system" width="128" height="121"/>
         <image name="top10 badge" width="17" height="24"/>
-        <image name="turquoise" width="24" height="24"/>
         <image name="노량" width="440" height="660"/>
         <image name="더퍼스트슬램덩크" width="440" height="660"/>
         <image name="밀수" width="440" height="660"/>

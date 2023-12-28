@@ -18,6 +18,7 @@ class SavedContentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // savedTitle과 savedBody를 같이 묶어서 코드를 줄일 수가 있을까? 공통적인 요소들이 없는데?
         savedTitle.text = "'나만의 자동 저장' 기능"
         savedTitle.font = .boldSystemFont(ofSize: 20)
         savedTitle.textAlignment = .center
@@ -30,14 +31,14 @@ class SavedContentsViewController: UIViewController {
         
         contentImg.image = .dummy
         
-        settingButton.setTitle("설정하기", for: .normal)
-        settingButton.setTitleColor(.white, for: .normal)
-        settingButton.layer.cornerRadius = 5
-        settingButton.backgroundColor = .blue
+        setButton(button: settingButton, title: "설정하기", fontColor: .white, buttonColor: .blue)
+        setButton(button: searchButton, title: "저장 가능한 콘텐츠 살펴보기", fontColor: .black, buttonColor: .white)
         
-        searchButton.setTitle("저장 가능한 콘텐츠 살펴보기", for: .normal)
-        searchButton.setTitleColor(.black, for: .normal)
-        searchButton.backgroundColor = .white
-        searchButton.layer.cornerRadius = 5
+        func setButton(button: UIButton, title: String, fontColor: UIColor, buttonColor: UIColor) {
+            button.setTitle(title, for: .normal)
+            button.setTitleColor(fontColor, for: .normal)
+            button.layer.cornerRadius = 5
+            button.backgroundColor = buttonColor
+        }
     }
 }
