@@ -17,6 +17,7 @@
 		C28134492B3AD6FF001ED300 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28134472B3AD6FF001ED300 /* Main.storyboard */; };
 		C281344B2B3AD701001ED300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C281344A2B3AD701001ED300 /* Assets.xcassets */; };
 		C281344E2B3AD701001ED300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C281344C2B3AD701001ED300 /* LaunchScreen.storyboard */; };
+		C2D076002B3D249C004D08DA /* ViewControllertest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D075FF2B3D249C004D08DA /* ViewControllertest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C281344A2B3AD701001ED300 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C281344D2B3AD701001ED300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C281344F2B3AD701001ED300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2D075FF2B3D249C004D08DA /* ViewControllertest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllertest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				C23478102B3C4CA000238899 /* NewHotViewController.swift */,
 				C23478122B3C4E9200238899 /* SavedContentsViewController.swift */,
 				C23478142B3C54DE00238899 /* MemberViewController.swift */,
+				C2D075FF2B3D249C004D08DA /* ViewControllertest.swift */,
 			);
 			path = SeSACFirstApp_HW;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			files = (
 				C28134462B3AD6FF001ED300 /* ViewController.swift in Sources */,
 				C23478152B3C54DE00238899 /* MemberViewController.swift in Sources */,
+				C2D076002B3D249C004D08DA /* ViewControllertest.swift in Sources */,
 				C28134422B3AD6FF001ED300 /* AppDelegate.swift in Sources */,
 				C23478132B3C4E9200238899 /* SavedContentsViewController.swift in Sources */,
 				C23478112B3C4CA000238899 /* NewHotViewController.swift in Sources */,

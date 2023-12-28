@@ -74,6 +74,7 @@ class MemberViewController: UIViewController {
         
         toggleButton.setOn(false, animated: true)
         toggleButton.onTintColor = .red
+        toggleButton.thumbTintColor = .blue
     }
     
     @IBAction func joinMemeberClicked(_ sender: UIButton) {
