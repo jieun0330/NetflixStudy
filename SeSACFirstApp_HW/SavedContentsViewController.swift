@@ -18,7 +18,6 @@ class SavedContentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // savedTitle과 savedBody를 같이 묶어서 코드를 줄일 수가 있을까? 공통적인 요소들이 없는데?
         savedTitle.text = "'나만의 자동 저장' 기능"
         savedTitle.font = .boldSystemFont(ofSize: 20)
         savedTitle.textAlignment = .center
