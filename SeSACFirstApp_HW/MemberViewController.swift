@@ -84,7 +84,7 @@ class MemberViewController: UIViewController {
         button.setTitleColor(.black, for: .normal)
     }
     
-    func checkMember(state: String) {
+     func checkMember(state: String) {
         conditionOfMember.text = state
         conditionOfMember.font = .systemFont(ofSize: 13)
         conditionOfMember.textColor = .red
