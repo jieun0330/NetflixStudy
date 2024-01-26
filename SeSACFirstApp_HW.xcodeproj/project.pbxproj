@@ -20,6 +20,7 @@
 		C2A75FE42B637FFD00541BE7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C2A75FE32B637FFD00541BE7 /* SnapKit */; };
 		C2A75FE62B637FFD00541BE7 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = C2A75FE52B637FFD00541BE7 /* SnapKit-Dynamic */; };
 		C2A75FEA2B6380B200541BE7 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A75FE92B6380B200541BE7 /* FirstViewController.swift */; };
+		C2A75FEC2B63A2B700541BE7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A75FEB2B63A2B700541BE7 /* SecondViewController.swift */; };
 		C2D076002B3D249C004D08DA /* ViewControllertest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D075FF2B3D249C004D08DA /* ViewControllertest.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		C281344D2B3AD701001ED300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C281344F2B3AD701001ED300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2A75FE92B6380B200541BE7 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		C2A75FEB2B63A2B700541BE7 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		C2D075FF2B3D249C004D08DA /* ViewControllertest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllertest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				C2A75FE92B6380B200541BE7 /* FirstViewController.swift */,
+				C2A75FEB2B63A2B700541BE7 /* SecondViewController.swift */,
 			);
 			path = Codebase;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				C23478132B3C4E9200238899 /* SavedContentsViewController.swift in Sources */,
 				C23478112B3C4CA000238899 /* NewHotViewController.swift in Sources */,
 				C28134442B3AD6FF001ED300 /* SceneDelegate.swift in Sources */,
+				C2A75FEC2B63A2B700541BE7 /* SecondViewController.swift in Sources */,
 				C234780F2B3C468B00238899 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

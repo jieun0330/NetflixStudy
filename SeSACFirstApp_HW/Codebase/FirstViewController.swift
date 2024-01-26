@@ -23,7 +23,7 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .black
-        navigationItem.title = "고래밥님"
+        navigationItem.title = "고래밥"
         
         configureHierachy()
         configureView()
