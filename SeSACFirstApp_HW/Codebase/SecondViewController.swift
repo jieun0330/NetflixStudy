@@ -28,12 +28,10 @@ class SecondViewController: UIViewController {
     }
     
     func configureHierachy() {
-        view.addSubview(searchBar)
-        view.addSubview(firstButton)
-        view.addSubview(secondButton)
-        view.addSubview(thirdButton)
-        view.addSubview(firstText)
-        view.addSubview(secondText)
+        
+        [searchBar, firstButton, secondButton, thirdButton, firstText, secondText].map {
+            view.addSubview($0)
+        }
     }
     
     func configureView() {
@@ -102,7 +100,7 @@ class SecondViewController: UIViewController {
         sender.titleLabel?.font = UIFont.systemFont(ofSize: 13)
     }
 }
-
-#Preview {
-    SecondViewController()
-}
+//
+//#Preview {
+//    SecondViewController()
+//}

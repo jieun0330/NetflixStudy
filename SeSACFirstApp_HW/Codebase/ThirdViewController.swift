@@ -93,6 +93,6 @@ class ThirdViewController: UIViewController {
     }
 }
 
-#Preview {
-    ThirdViewController()
-}
+//#Preview {
+//    ThirdViewController()
+//}

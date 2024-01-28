@@ -11,6 +11,7 @@ import SnapKit
 class FirstViewController: UIViewController {
     
     let mainImg = UIImageView()
+    let movieInfoLabel = UILabel()
     let playButton = UIButton()
     let likeListButton = UIButton()
     let contentsLabel = UILabel()
@@ -54,7 +55,7 @@ class FirstViewController: UIViewController {
         //            stackView.addArrangedSubview($0)
         //        }
         
-        [playButton, likeListButton].forEach {
+        [movieInfoLabel, playButton, likeListButton].forEach {
             mainImg.addSubview($0)
         }
     }
@@ -68,6 +69,11 @@ class FirstViewController: UIViewController {
         mainImg.layer.cornerRadius = 10
         // 이미지를 둥그렇게 잘라주려면 이걸 해야 함
         mainImg.clipsToBounds = true
+        
+        movieInfoLabel.text = "응원하고픈 · 흥미진진 · 사극 · 전투 · 한극 작품"
+        movieInfoLabel.font = UIFont.boldSystemFont(ofSize: 13)
+        movieInfoLabel.textColor = .gray
+        movieInfoLabel.textAlignment = .center
         
         buttonType(playButton, imageName: "play.fill", tintColor: .black, title: "  재생", titleColor: .black, backColor: .white)
         buttonType(likeListButton, imageName: "plus", tintColor: .white, title: "  내가 찜한 리스트", titleColor: .white, backColor: .gray)
@@ -83,8 +89,6 @@ class FirstViewController: UIViewController {
         //         subview들 간의 간격
         // 이걸 내가 못써먹고있는거같은데
         stvCell.spacing = 10
-        stvCell.layer.borderColor = UIColor.red.cgColor
-        stvCell.layer.borderWidth = 3
         
         firstSubImg.image = .더퍼스트슬램덩크
         secondSubImg.image = .밀수
@@ -112,6 +116,11 @@ class FirstViewController: UIViewController {
             make.height.equalToSuperview().multipliedBy(0.6)
         }
         
+        movieInfoLabel.snp.makeConstraints { make in
+            make.bottom.equalTo(playButton.snp.top).offset(-20)
+            make.horizontalEdges.equalToSuperview().inset(40)
+        }
+        
         playButton.snp.makeConstraints { make in
             // 재생버튼의 엄빠는 메인이미지니까~
             make.leading.equalToSuperview().inset(20)
@@ -128,14 +137,14 @@ class FirstViewController: UIViewController {
         }
         
         contentsLabel.snp.makeConstraints { make in
-            make.top.equalTo(mainImg.snp.bottom).offset(20)
+            make.top.equalTo(mainImg.snp.bottom).offset(10)
             make.leading.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
         
         stvCell.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(20)
             make.centerX.equalToSuperview()
-            make.top.equalTo(contentsLabel.snp.bottom).offset(20)
+            make.top.equalTo(contentsLabel.snp.bottom).offset(10)
         }
         
         firstSubImg.snp.makeConstraints { make in

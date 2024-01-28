@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C216071A2B665F22001DD301 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21607192B665F22001DD301 /* TabBarController.swift */; };
 		C234780F2B3C468B00238899 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C234780E2B3C468B00238899 /* MainViewController.swift */; };
 		C23478112B3C4CA000238899 /* NewHotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23478102B3C4CA000238899 /* NewHotViewController.swift */; };
 		C23478132B3C4E9200238899 /* SavedContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23478122B3C4E9200238899 /* SavedContentsViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C21607192B665F22001DD301 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C234780E2B3C468B00238899 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C23478102B3C4CA000238899 /* NewHotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotViewController.swift; sourceTree = "<group>"; };
 		C23478122B3C4E9200238899 /* SavedContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedContentsViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				C2A75FE92B6380B200541BE7 /* FirstViewController.swift */,
 				C2A75FEB2B63A2B700541BE7 /* SecondViewController.swift */,
 				C2A75FEF2B63AFB900541BE7 /* ThirdViewController.swift */,
+				C21607192B665F22001DD301 /* TabBarController.swift */,
 			);
 			path = Codebase;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				C28134462B3AD6FF001ED300 /* ViewController.swift in Sources */,
 				C23478152B3C54DE00238899 /* MemberViewController.swift in Sources */,
 				C2D076002B3D249C004D08DA /* ViewControllertest.swift in Sources */,
+				C216071A2B665F22001DD301 /* TabBarController.swift in Sources */,
 				C28134422B3AD6FF001ED300 /* AppDelegate.swift in Sources */,
 				C23478132B3C4E9200238899 /* SavedContentsViewController.swift in Sources */,
 				C23478112B3C4CA000238899 /* NewHotViewController.swift in Sources */,
