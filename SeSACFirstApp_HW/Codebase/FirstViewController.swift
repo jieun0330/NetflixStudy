@@ -13,8 +13,8 @@ class FirstViewController: UIViewController {
     let mainImg = UIImageView()
     let playButton = UIButton()
     let likeListButton = UIButton()
-    
     let contentsLabel = UILabel()
+    let stvCell = UIStackView()
     let firstSubImg = UIImageView()
     let secondSubImg = UIImageView()
     let thirdSubImg = UIImageView()
@@ -28,19 +28,35 @@ class FirstViewController: UIViewController {
         configureHierachy()
         configureView()
         setupConstraints()
-        
     }
     
     func configureHierachy() {
-        view.addSubview(mainImg)
         
-        mainImg.addSubview(playButton)
-        mainImg.addSubview(likeListButton)
+        // 써먹기~3
+        // 근데 이게 순서대로 들어가는건가
+        // 중간에 뭐 추가되면 중간에 낑겨 넣어줘야되는건가
+        // 그러겠지,,,,,,? 🚨
+        [mainImg, contentsLabel, stvCell].forEach {
+            view.addSubview($0)
+        }
         
-        view.addSubview(contentsLabel)
-        view.addSubview(firstSubImg)
-        view.addSubview(secondSubImg)
-        view.addSubview(thirdSubImg)
+        // forEach와 map의 차이는 ?? ? ? ? ?
+        // forEach는 리턴하는 값이 없고
+        // map은 리턴하는 값이 있어서 연달아 다른 작업을 할 수 있다
+        // 그러고보니 프로그래머스 풀 때 .map 뒤에 뭐 숫자*2 이런거 했던거같다
+        // 그러면 세개의 이미지가 리턴해서 다른 작업할게 뭐가 있지
+        // 이것도 foreach 써도 되는거 아닌가
+        [firstSubImg, secondSubImg, thirdSubImg].forEach {
+            stvCell.addArrangedSubview($0)
+        }
+        
+        //        [firstSubImg, secondSubImg, thirdSubImg].map {
+        //            stackView.addArrangedSubview($0)
+        //        }
+        
+        [playButton, likeListButton].forEach {
+            mainImg.addSubview($0)
+        }
     }
     
     func configureView() {
@@ -58,15 +74,32 @@ class FirstViewController: UIViewController {
         
         contentsLabel.text = "지금 뜨는 콘텐츠"
         
-        firstSubImg.contentMode = .scaleAspectFill
+        // 스택뷰 방향
+        stvCell.axis = .horizontal
+        // subview들을 정렬하는 방법
+        stvCell.alignment = .center
+        // subview들의 크기를 어떻게 분배할지
+        stvCell.distribution = .equalSpacing
+        //         subview들 간의 간격
+        // 이걸 내가 못써먹고있는거같은데
+        stvCell.spacing = 10
+        stvCell.layer.borderColor = UIColor.red.cgColor
+        stvCell.layer.borderWidth = 3
+        
         firstSubImg.image = .더퍼스트슬램덩크
+        secondSubImg.image = .밀수
+        thirdSubImg.image = .범죄도시3
+        
+        firstSubImg.contentMode = .scaleAspectFit
+        firstSubImg.clipsToBounds = true
         
         // 두번째 이미지만 추가하면 세개의 위치가 잘 안맞는다 🚨🚨🚨🚨🚨
-        //        secondSubImg.contentMode = .scaleAspectFill
-        //        secondSubImg.image = .밀수
-        //
-        thirdSubImg.contentMode = .scaleAspectFill
-        thirdSubImg.image = .범죄도시3
+        // 오케이 스택뷰 도전
+        secondSubImg.contentMode = .scaleAspectFit
+        secondSubImg.clipsToBounds = true
+        
+        thirdSubImg.contentMode = .scaleAspectFit
+        thirdSubImg.clipsToBounds = true
     }
     
     func setupConstraints() {
@@ -97,32 +130,35 @@ class FirstViewController: UIViewController {
         contentsLabel.snp.makeConstraints { make in
             make.top.equalTo(mainImg.snp.bottom).offset(20)
             make.leading.equalTo(view.safeAreaLayoutGuide).inset(20)
-            
+        }
+        
+        stvCell.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview().inset(20)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(contentsLabel.snp.bottom).offset(20)
         }
         
         firstSubImg.snp.makeConstraints { make in
-            make.leading.equalTo(mainImg)
-            make.top.equalTo(contentsLabel.snp.bottom).offset(20)
-            // 비율로 주고싶은데 잘 안된다 🚨🚨🚨🚨🚨
+            make.verticalEdges.equalToSuperview()
+            make.leading.equalToSuperview()
             make.width.equalTo(100)
             make.height.equalTo(150)
         }
         
         secondSubImg.snp.makeConstraints { make in
-            //            make.leading.equalTo(firstSubImg.snp.trailing).offset(20)
-            //            make.top.equalTo(firstSubImg)
-            //            make.trailing.equalTo(thirdSubImg.snp.leading).offset(10)
-            //            make.width.equalTo(100)
-            //            make.height.equalTo(150)
+            make.verticalEdges.equalToSuperview()
+            make.width.equalTo(100)
+            make.height.equalTo(150)
+            make.centerX.equalToSuperview()
+            make.leading.equalTo(firstSubImg.snp.trailing).offset(stvCell.spacing)
         }
         
         thirdSubImg.snp.makeConstraints { make in
-            make.leading.equalTo(secondSubImg.snp.trailing).offset(10)
-            make.top.equalTo(firstSubImg)
-            make.trailing.equalTo(mainImg)
-            make.width.equalTo(firstSubImg)
+            make.verticalEdges.equalToSuperview()
             make.width.equalTo(100)
             make.height.equalTo(150)
+            make.trailing.equalToSuperview()
+            make.leading.equalTo(secondSubImg.snp.trailing).offset(stvCell.spacing)
         }
     }
     
@@ -138,6 +174,6 @@ class FirstViewController: UIViewController {
     }
 }
 
-#Preview {
-    FirstViewController()
-}
+//#Preview {
+//    FirstViewController()
+//}
