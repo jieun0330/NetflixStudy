@@ -9,6 +9,11 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    // 스토리보드에서 생성한 클래스들을 코드로 잇게 하기 위한 동작
+    // 스토리보드와의 연결고리
+    // IBOutlet 값에 접근하기 위한 변수
+    // IB가 뭐야?
+    // @이건 왜 붙어?
     @IBOutlet var mainImage: UIImageView!
     @IBOutlet var playButton: UIButton!
     @IBOutlet var likeListButton: UIButton!
@@ -24,8 +29,8 @@ class MainViewController: UIViewController {
         poster(mainImage, borderColor: .red)
         mainImage.layer.cornerRadius = 15
         mainImage.layer.borderWidth = 2
-        button(playButton, backgroundColor: .white, setTitle: "재생", tintColor: .black, imageName: "play.fill")
-        button(likeListButton, backgroundColor: .black, setTitle: "내가 찜한 리스트", tintColor: .white, imageName: "plus")
+        button(playButton, backgroundColor: .white, setTitle: " 재생", tintColor: .black, imageName: "play.fill")
+        button(likeListButton, backgroundColor: .black, setTitle: " 내가 찜한 리스트", tintColor: .white, imageName: "plus")
         poster(subFirstImage, borderColor: .orange)
         poster(subSecImage, borderColor: .yellow)
         poster(subThirdImage, borderColor: .green)

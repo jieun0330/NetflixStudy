@@ -15,10 +15,11 @@ class FirstViewController: UIViewController {
     let playButton = UIButton()
     let likeListButton = UIButton()
     let contentsLabel = UILabel()
-    let stvCell = UIStackView()
+    let stackView = UIStackView()
     let firstSubImg = UIImageView()
     let secondSubImg = UIImageView()
     let thirdSubImg = UIImageView()
+    let images = ["노량","더퍼스트슬램덩크","밀수","범죄도시3","서울의봄","스즈메의문단속","아바타물의길","오펜하이머","육사오","콘크리트유토피아"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,18 @@ class FirstViewController: UIViewController {
         configureHierachy()
         configureView()
         setupConstraints()
+        
+        // 똑같이 했는데 왜 안될까 왜 왜왜왜왜오애왜왜 🚨🚨🚨🚨🚨
+//        playButton.addTarget(self, action: #selector(playButtonClicked), for: .touchUpInside)
     }
+    
+//    @objc func playButtonClicked() {
+//        print("버튼 눌렸")
+//        mainImg.image = UIImage(named: images.randomElement()!)
+//        firstSubImg.image = UIImage(named: images.randomElement()!)
+//        secondSubImg.image = UIImage(named: images.randomElement()!)
+//        thirdSubImg.image = UIImage(named: images.randomElement()!)
+//    }
     
     func configureHierachy() {
         
@@ -37,7 +49,7 @@ class FirstViewController: UIViewController {
         // 근데 이게 순서대로 들어가는건가
         // 중간에 뭐 추가되면 중간에 낑겨 넣어줘야되는건가
         // 그러겠지,,,,,,? 🚨
-        [mainImg, contentsLabel, stvCell].forEach {
+        [mainImg, contentsLabel, stackView].forEach {
             view.addSubview($0)
         }
         
@@ -48,7 +60,7 @@ class FirstViewController: UIViewController {
         // 그러면 세개의 이미지가 리턴해서 다른 작업할게 뭐가 있지
         // 이것도 foreach 써도 되는거 아닌가
         [firstSubImg, secondSubImg, thirdSubImg].forEach {
-            stvCell.addArrangedSubview($0)
+            stackView.addArrangedSubview($0)
         }
         
         //        [firstSubImg, secondSubImg, thirdSubImg].map {
@@ -61,7 +73,7 @@ class FirstViewController: UIViewController {
     }
     
     func configureView() {
-        mainImg.image = .노량
+        mainImg.image = UIImage(named: images.randomElement()!)
         //scaleAspectFit: 위아래 남음
         //scaleToFill: 이상하게 위아래로 주욱 늘어남
         //scaleAspectFill: 여백 무시해버리고 지맘대로 자리 차지함 ✅
@@ -72,27 +84,28 @@ class FirstViewController: UIViewController {
         
         movieInfoLabel.text = "응원하고픈 · 흥미진진 · 사극 · 전투 · 한극 작품"
         movieInfoLabel.font = UIFont.boldSystemFont(ofSize: 13)
-        movieInfoLabel.textColor = .gray
+        movieInfoLabel.textColor = .white
         movieInfoLabel.textAlignment = .center
-        
+                
         buttonType(playButton, imageName: "play.fill", tintColor: .black, title: "  재생", titleColor: .black, backColor: .white)
         buttonType(likeListButton, imageName: "plus", tintColor: .white, title: "  내가 찜한 리스트", titleColor: .white, backColor: .gray)
+        
         
         contentsLabel.text = "지금 뜨는 콘텐츠"
         
         // 스택뷰 방향
-        stvCell.axis = .horizontal
+        stackView.axis = .horizontal
         // subview들을 정렬하는 방법
-        stvCell.alignment = .center
+        stackView.alignment = .center
         // subview들의 크기를 어떻게 분배할지
-        stvCell.distribution = .equalSpacing
+        stackView.distribution = .equalSpacing
         //         subview들 간의 간격
         // 이걸 내가 못써먹고있는거같은데
-        stvCell.spacing = 10
+        stackView.spacing = 10
         
-        firstSubImg.image = .더퍼스트슬램덩크
-        secondSubImg.image = .밀수
-        thirdSubImg.image = .범죄도시3
+        firstSubImg.image = UIImage(named: images.randomElement()!)
+        secondSubImg.image = UIImage(named: images.randomElement()!)
+        thirdSubImg.image = UIImage(named: images.randomElement()!)
         
         firstSubImg.contentMode = .scaleAspectFit
         firstSubImg.clipsToBounds = true
@@ -141,7 +154,7 @@ class FirstViewController: UIViewController {
             make.leading.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
         
-        stvCell.snp.makeConstraints { make in
+        stackView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(20)
             make.centerX.equalToSuperview()
             make.top.equalTo(contentsLabel.snp.bottom).offset(10)
@@ -159,7 +172,7 @@ class FirstViewController: UIViewController {
             make.width.equalTo(100)
             make.height.equalTo(150)
             make.centerX.equalToSuperview()
-            make.leading.equalTo(firstSubImg.snp.trailing).offset(stvCell.spacing)
+            make.leading.equalTo(firstSubImg.snp.trailing).offset(stackView.spacing)
         }
         
         thirdSubImg.snp.makeConstraints { make in
@@ -167,9 +180,11 @@ class FirstViewController: UIViewController {
             make.width.equalTo(100)
             make.height.equalTo(150)
             make.trailing.equalToSuperview()
-            make.leading.equalTo(secondSubImg.snp.trailing).offset(stvCell.spacing)
+            make.leading.equalTo(secondSubImg.snp.trailing).offset(stackView.spacing)
         }
     }
+    
+
     
     // 호에에엥 이렇게 길어도 되는거야? 🚨🚨🚨🚨🚨
     func buttonType(_ sender: UIButton, imageName: String, tintColor: UIColor, title: String, titleColor: UIColor, backColor: UIColor) {

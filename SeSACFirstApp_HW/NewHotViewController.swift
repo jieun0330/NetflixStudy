@@ -20,52 +20,63 @@ class NewHotViewController: UIViewController {
         super.viewDidLoad()
         
         // 버튼 텍스트 크기 달라지는거 확인해야함
-        button(comingSoon, title: "공개 예정", active: true)
-        button(hotContents, title: "모두의 인기 콘텐츠", active: false)
-        button(topTen, title: "TOP 10 시리즈", active: false)
+        buttonType(comingSoon, title: "공개 예정")
+        buttonType(hotContents, title: "모두의 인기 콘텐츠")
+        buttonType(topTen, title: "TOP 10 시리즈")    
+        
+        comingSoonClicked(comingSoon)
     }
     
     @IBAction func comingSoonClicked(_ sender: UIButton) {
-        button(comingSoon, title: "공개 예정", active: true)
-        button(hotContents, title: "모두의 인기 콘텐츠", active: false)
-        button(topTen, title: "TOP 10 시리즈", active: false)
+        // 순서가 중요한거였구나
+        // 클릭함과 동시에 -> 다른 버튼이 다 꺼지고 -> 얘 하나만 선택이 되어야 하는거니까
+        buttonClicked()
+        buttonOn(sender)
         
         designText(firstText, body: "이런! 찾으시는 작품이 없습니다")
         designText(secText, body: "다른 영화, 시리즈, 배우, 감독 또는 장르를 검색해보세요.")
     }
     
     @IBAction func hotContentsClicked(_ sender: UIButton) {
-        button(comingSoon, title: "공개 예정", active: false)
-        button(hotContents, title: "모두의 인기 콘텐츠", active: true)
-        button(topTen, title: "TOP 10 시리즈", active: false)
+        buttonClicked()
+        buttonOn(sender)
         
         designText(firstText, body: "Netflix 인기 콘텐츠입니다")
         designText(secText, body: "헬's 키친 보실래요?")
     }
     
     @IBAction func topTenClicked(_ sender: UIButton) {
-        button(comingSoon, title: "공개 예정", active: false)
-        button(hotContents, title: "모두의 인기 콘텐츠", active: false)
-        button(topTen, title: "TOP 10 시리즈", active: true)
+        buttonClicked()
+        buttonOn(sender)
         
         designText(firstText, body: "한국의 TOP 10 콘텐츠입니다")
         designText(secText, body: "빈센조 보실래요?")
     }
 
     // active 대신 sender 이용해서 해보기
-    func button(_ button: UIButton, title: String, active: Bool) {
+    func buttonType(_ button: UIButton, title: String) {
         
         button.setTitle(title, for: .normal)
         button.layer.cornerRadius = 15
-        
-        if active == true {
-            button.setTitleColor(.black, for: .normal)
-            button.backgroundColor = .white
-        } else {
-            button.setTitleColor(.white, for: .normal)
-            button.backgroundColor = .black
-        }
     }
+    
+    func buttonOn(_ sender: UIButton) {
+        sender.setTitleColor(.black, for: .normal)
+        sender.backgroundColor = .white
+    }
+    
+    func buttonOff(_ sender: UIButton) {
+        sender.setTitleColor(.white, for: .normal)
+        sender.backgroundColor = .black
+    }
+    
+    // 어느 버튼을 눌렀을 때 나머지가 다 꺼지게끔
+    func buttonClicked() {
+        buttonOff(comingSoon)
+        buttonOff(hotContents)
+        buttonOff(topTen)
+    }
+    
     
     func designText(_ content: UILabel, body: String) {
         content.textAlignment = .center

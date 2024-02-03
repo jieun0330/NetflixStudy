@@ -18,6 +18,8 @@
 		C28134492B3AD6FF001ED300 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28134472B3AD6FF001ED300 /* Main.storyboard */; };
 		C281344B2B3AD701001ED300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C281344A2B3AD701001ED300 /* Assets.xcassets */; };
 		C281344E2B3AD701001ED300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C281344C2B3AD701001ED300 /* LaunchScreen.storyboard */; };
+		C2898B4F2B67A7C300AF9CE8 /* JoinMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2898B4E2B67A7C300AF9CE8 /* JoinMemberViewController.swift */; };
+		C2898B512B67ADBD00AF9CE8 /* joinMemberTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2898B502B67ADBD00AF9CE8 /* joinMemberTextField.swift */; };
 		C2A75FE42B637FFD00541BE7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C2A75FE32B637FFD00541BE7 /* SnapKit */; };
 		C2A75FE62B637FFD00541BE7 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = C2A75FE52B637FFD00541BE7 /* SnapKit-Dynamic */; };
 		C2A75FEA2B6380B200541BE7 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A75FE92B6380B200541BE7 /* FirstViewController.swift */; };
@@ -40,6 +42,8 @@
 		C281344A2B3AD701001ED300 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C281344D2B3AD701001ED300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C281344F2B3AD701001ED300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2898B4E2B67A7C300AF9CE8 /* JoinMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinMemberViewController.swift; sourceTree = "<group>"; };
+		C2898B502B67ADBD00AF9CE8 /* joinMemberTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = joinMemberTextField.swift; sourceTree = "<group>"; };
 		C2A75FE92B6380B200541BE7 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		C2A75FEB2B63A2B700541BE7 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		C2A75FEF2B63AFB900541BE7 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				C2A75FEB2B63A2B700541BE7 /* SecondViewController.swift */,
 				C2A75FEF2B63AFB900541BE7 /* ThirdViewController.swift */,
 				C21607192B665F22001DD301 /* TabBarController.swift */,
+				C2898B4E2B67A7C300AF9CE8 /* JoinMemberViewController.swift */,
+				C2898B502B67ADBD00AF9CE8 /* joinMemberTextField.swift */,
 			);
 			path = Codebase;
 			sourceTree = "<group>";
@@ -188,6 +194,7 @@
 				C28134462B3AD6FF001ED300 /* ViewController.swift in Sources */,
 				C23478152B3C54DE00238899 /* MemberViewController.swift in Sources */,
 				C2D076002B3D249C004D08DA /* ViewControllertest.swift in Sources */,
+				C2898B4F2B67A7C300AF9CE8 /* JoinMemberViewController.swift in Sources */,
 				C216071A2B665F22001DD301 /* TabBarController.swift in Sources */,
 				C28134422B3AD6FF001ED300 /* AppDelegate.swift in Sources */,
 				C23478132B3C4E9200238899 /* SavedContentsViewController.swift in Sources */,
@@ -196,6 +203,7 @@
 				C2A75FF02B63AFB900541BE7 /* ThirdViewController.swift in Sources */,
 				C2A75FEC2B63A2B700541BE7 /* SecondViewController.swift in Sources */,
 				C234780F2B3C468B00238899 /* MainViewController.swift in Sources */,
+				C2898B512B67ADBD00AF9CE8 /* joinMemberTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
