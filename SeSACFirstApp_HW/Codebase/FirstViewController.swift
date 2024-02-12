@@ -45,10 +45,6 @@ class FirstViewController: UIViewController {
     
     func configureHierachy() {
         
-        // 써먹기~3
-        // 근데 이게 순서대로 들어가는건가
-        // 중간에 뭐 추가되면 중간에 낑겨 넣어줘야되는건가
-        // 그러겠지,,,,,,? 🚨
         [mainImg, contentsLabel, stackView].forEach {
             view.addSubview($0)
         }
@@ -79,7 +75,6 @@ class FirstViewController: UIViewController {
         //scaleAspectFill: 여백 무시해버리고 지맘대로 자리 차지함 ✅
         mainImg.contentMode = .scaleAspectFill
         mainImg.layer.cornerRadius = 10
-        // 이미지를 둥그렇게 잘라주려면 이걸 해야 함
         mainImg.clipsToBounds = true
         
         movieInfoLabel.text = "응원하고픈 · 흥미진진 · 사극 · 전투 · 한극 작품"
@@ -89,7 +84,6 @@ class FirstViewController: UIViewController {
                 
         buttonType(playButton, imageName: "play.fill", tintColor: .black, title: "  재생", titleColor: .black, backColor: .white)
         buttonType(likeListButton, imageName: "plus", tintColor: .white, title: "  내가 찜한 리스트", titleColor: .white, backColor: .gray)
-        
         
         contentsLabel.text = "지금 뜨는 콘텐츠"
         
@@ -110,7 +104,7 @@ class FirstViewController: UIViewController {
         firstSubImg.contentMode = .scaleAspectFit
         firstSubImg.clipsToBounds = true
         
-        // 두번째 이미지만 추가하면 세개의 위치가 잘 안맞는다 🚨🚨🚨🚨🚨
+        // 두번째 이미지만 추가하면 세개의 위치가 잘 안맞는다 🚨
         // 오케이 스택뷰 도전
         secondSubImg.contentMode = .scaleAspectFit
         secondSubImg.clipsToBounds = true
@@ -120,72 +114,69 @@ class FirstViewController: UIViewController {
     }
     
     func setupConstraints() {
-        mainImg.snp.makeConstraints { make in
-            // leading + trailing = horizontalEdges
+        mainImg.snp.makeConstraints {
             // safearea는 기본적으로 위 아래만이여서, 좌우 여백을 주려면 inset이 필요하다
-            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(20)
-            make.top.equalTo(view.safeAreaLayoutGuide)
+            $0.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(20)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
             // 이미지 비율로 주고 싶을 때: multipliedBy
-            make.height.equalToSuperview().multipliedBy(0.6)
+            $0.height.equalToSuperview().multipliedBy(0.6)
         }
         
-        movieInfoLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(playButton.snp.top).offset(-20)
-            make.horizontalEdges.equalToSuperview().inset(40)
+        movieInfoLabel.snp.makeConstraints {
+            $0.bottom.equalTo(playButton.snp.top).offset(-20)
+            $0.horizontalEdges.equalToSuperview().inset(40)
         }
         
-        playButton.snp.makeConstraints { make in
+        playButton.snp.makeConstraints {
             // 재생버튼의 엄빠는 메인이미지니까~
-            make.leading.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview().inset(20)
-            make.width.equalTo(140)
-            make.height.equalTo(40)
+            $0.leading.equalToSuperview().inset(20)
+            $0.bottom.equalToSuperview().inset(20)
+            $0.width.equalTo(140)
+            $0.height.equalTo(40)
         }
         
-        likeListButton.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview().inset(20)
-            make.width.equalTo(140)
-            make.height.equalTo(40)
+        likeListButton.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(20)
+            $0.bottom.equalToSuperview().inset(20)
+            $0.width.equalTo(140)
+            $0.height.equalTo(40)
         }
         
-        contentsLabel.snp.makeConstraints { make in
-            make.top.equalTo(mainImg.snp.bottom).offset(10)
-            make.leading.equalTo(view.safeAreaLayoutGuide).inset(20)
+        contentsLabel.snp.makeConstraints {
+            $0.top.equalTo(mainImg.snp.bottom).offset(10)
+            $0.leading.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
         
-        stackView.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(20)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(contentsLabel.snp.bottom).offset(10)
+        stackView.snp.makeConstraints {
+            $0.horizontalEdges.equalToSuperview().inset(20)
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(contentsLabel.snp.bottom).offset(10)
         }
         
-        firstSubImg.snp.makeConstraints { make in
-            make.verticalEdges.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.width.equalTo(100)
-            make.height.equalTo(150)
+        firstSubImg.snp.makeConstraints {
+            $0.verticalEdges.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.width.equalTo(100)
+            $0.height.equalTo(150)
         }
         
-        secondSubImg.snp.makeConstraints { make in
-            make.verticalEdges.equalToSuperview()
-            make.width.equalTo(100)
-            make.height.equalTo(150)
-            make.centerX.equalToSuperview()
-            make.leading.equalTo(firstSubImg.snp.trailing).offset(stackView.spacing)
+        secondSubImg.snp.makeConstraints {
+            $0.verticalEdges.equalToSuperview()
+            $0.width.equalTo(100)
+            $0.height.equalTo(150)
+            $0.centerX.equalToSuperview()
+            $0.leading.equalTo(firstSubImg.snp.trailing).offset(stackView.spacing)
         }
         
-        thirdSubImg.snp.makeConstraints { make in
-            make.verticalEdges.equalToSuperview()
-            make.width.equalTo(100)
-            make.height.equalTo(150)
-            make.trailing.equalToSuperview()
-            make.leading.equalTo(secondSubImg.snp.trailing).offset(stackView.spacing)
+        thirdSubImg.snp.makeConstraints {
+            $0.verticalEdges.equalToSuperview()
+            $0.width.equalTo(100)
+            $0.height.equalTo(150)
+            $0.trailing.equalToSuperview()
+            $0.leading.equalTo(secondSubImg.snp.trailing).offset(stackView.spacing)
         }
     }
-    
 
-    
     // 호에에엥 이렇게 길어도 되는거야? 🚨🚨🚨🚨🚨
     func buttonType(_ sender: UIButton, imageName: String, tintColor: UIColor, title: String, titleColor: UIColor, backColor: UIColor) {
         sender.setImage(UIImage(systemName: imageName), for: .normal)
@@ -197,7 +188,3 @@ class FirstViewController: UIViewController {
         sender.layer.cornerRadius = 10
     }
 }
-
-//#Preview {
-//    FirstViewController()
-//}

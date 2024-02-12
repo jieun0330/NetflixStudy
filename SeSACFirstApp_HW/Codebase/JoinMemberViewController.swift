@@ -44,26 +44,20 @@ class JoinMemberViewController: UIViewController {
         
         // 슈퍼클래스가 해야할 설정을 완료한 후 하위 클래스 설정을 수행하는 것이 일반적이다
         
-        
         // 인스턴스 프로퍼티, 타입 프로퍼티 🚨
         // 인스턴스 메서드, 타입 메서드 🚨
         
-        
         super.viewDidLoad()
-        
         
         configureHierachy()
         configureView()
         configureConstraints()
-
     }
     
     func configureHierachy() {
-        // 누가 맨 위에 있는지 생각해라
         [email, password, nickname, location, code, join, addLabel, addSwitch].forEach {
             view.addSubview($0)
         }
-        
     }
     
     func configureView() {
@@ -143,8 +137,5 @@ class JoinMemberViewController: UIViewController {
             $0.trailing.equalTo(join)
             $0.top.equalTo(addLabel)
         }
-        
     }
-
-
 }

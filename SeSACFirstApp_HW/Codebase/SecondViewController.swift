@@ -29,7 +29,7 @@ class SecondViewController: UIViewController {
     
     func configureHierachy() {
         
-        [searchBar, firstButton, secondButton, thirdButton, firstText, secondText].map {
+        [searchBar, firstButton, secondButton, thirdButton, firstText, secondText].forEach {
             view.addSubview($0)
         }
     }
@@ -51,46 +51,44 @@ class SecondViewController: UIViewController {
         secondText.text = "다른 영화, 시리즈, 배우, 감독 또는 장르를 검색해 보세요."
         secondText.font = UIFont.systemFont(ofSize: 15)
         secondText.textColor = .gray
-        
     }
     
     func configureConstraints() {
-        searchBar.snp.makeConstraints { make in
-            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(20)
-            make.top.equalTo(view.safeAreaLayoutGuide)
+        searchBar.snp.makeConstraints {
+            $0.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(20)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
         }
         
-        firstButton.snp.makeConstraints { make in
-            make.width.equalTo(80)
-            make.height.equalTo(35)
-            make.top.equalTo(searchBar.snp.bottom).offset(10)
-            make.leading.equalTo(view.safeAreaLayoutGuide).inset(20)
+        firstButton.snp.makeConstraints {
+            $0.width.equalTo(80)
+            $0.height.equalTo(35)
+            $0.top.equalTo(searchBar.snp.bottom).offset(10)
+            $0.leading.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
         
-        secondButton.snp.makeConstraints { make in
-            make.width.equalTo(155)
-            make.height.equalTo(35)
-            make.top.equalTo(firstButton)
-            make.leading.equalTo(firstButton.snp.trailing)
+        secondButton.snp.makeConstraints {
+            $0.width.equalTo(155)
+            $0.height.equalTo(35)
+            $0.top.equalTo(firstButton)
+            $0.leading.equalTo(firstButton.snp.trailing)
         }
         
-        thirdButton.snp.makeConstraints { make in
-            make.width.equalTo(115)
-            make.height.equalTo(35)
-            make.top.equalTo(firstButton)
-            make.leading.equalTo(secondButton.snp.trailing)
+        thirdButton.snp.makeConstraints {
+            $0.width.equalTo(115)
+            $0.height.equalTo(35)
+            $0.top.equalTo(firstButton)
+            $0.leading.equalTo(secondButton.snp.trailing)
         }
         
-        firstText.snp.makeConstraints { make in
-            make.centerX.equalTo(view)
-            make.centerY.equalTo(view)
+        firstText.snp.makeConstraints {
+            $0.centerX.equalTo(view)
+            $0.centerY.equalTo(view)
         }
         
-        secondText.snp.makeConstraints { make in
-            make.centerX.equalTo(view)
-            make.top.equalTo(firstText.snp.bottom)
+        secondText.snp.makeConstraints {
+            $0.centerX.equalTo(view)
+            $0.top.equalTo(firstText.snp.bottom)
         }
-        
     }
     
     func buttonType(_ sender: UIButton, iconImg: String, title: String, titleColor: UIColor) {
@@ -100,7 +98,3 @@ class SecondViewController: UIViewController {
         sender.titleLabel?.font = UIFont.systemFont(ofSize: 13)
     }
 }
-//
-//#Preview {
-//    SecondViewController()
-//}

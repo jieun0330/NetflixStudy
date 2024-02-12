@@ -24,15 +24,13 @@ class ThirdViewController: UIViewController {
         configureHierachy()
         configureView()
         configureConstraints()
-        
     }
     
     func configureHierachy() {
-        view.addSubview(savedTitle)
-        view.addSubview(savedBody)
-        view.addSubview(contentImg)
-        view.addSubview(settingButton)
-        view.addSubview(savedButton)
+        
+        [savedTitle, savedBody, contentImg, settingButton, savedBody].forEach {
+            view.addSubview($0)
+        }
     }
     
     func configureView() {
@@ -51,37 +49,35 @@ class ThirdViewController: UIViewController {
     }
     
     func configureConstraints() {
-        savedTitle.snp.makeConstraints { make in
-            make.centerX.equalTo(view)
-            // 왜 inset을 줘도, offset을 줘도 똑같이 움직이냐~~~~~~~ 얼탱이네~~~~~~~~~~~~
-            make.bottom.equalTo(savedBody.snp.top)
+        savedTitle.snp.makeConstraints {
+            $0.centerX.equalTo(view)
+            $0.bottom.equalTo(savedBody.snp.top)
         }
         
-        savedBody.snp.makeConstraints { make in
-            make.centerX.equalTo(view)
-            make.bottom.equalTo(contentImg.snp.top)
-            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(40)
+        savedBody.snp.makeConstraints {
+            $0.centerX.equalTo(view)
+            $0.bottom.equalTo(contentImg.snp.top)
+            $0.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(40)
         }
         
-        contentImg.snp.makeConstraints { make in
-            make.centerX.equalTo(view)
-            make.centerY.equalTo(view)
+        contentImg.snp.makeConstraints {
+            $0.centerX.equalTo(view)
+            $0.centerY.equalTo(view)
         }
         
-        settingButton.snp.makeConstraints { make in
-            make.centerX.equalTo(view)
-            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(40)
-            make.top.equalTo(contentImg.snp.bottom).offset(40)
-            make.height.equalTo(40)
+        settingButton.snp.makeConstraints {
+            $0.centerX.equalTo(view)
+            $0.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(40)
+            $0.top.equalTo(contentImg.snp.bottom).offset(40)
+            $0.height.equalTo(40)
         }
         
-        savedButton.snp.makeConstraints { make in
-            make.centerX.equalTo(view)
-            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(80)
-            make.top.equalTo(settingButton.snp.bottom).offset(20)
-            make.height.equalTo(40)
+        savedButton.snp.makeConstraints {
+            $0.centerX.equalTo(view)
+            $0.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(80)
+            $0.top.equalTo(settingButton.snp.bottom).offset(20)
+            $0.height.equalTo(40)
         }
-        
     }
     
     func buttonType(_ sender: UIButton, title: String, backColor: UIColor, titlecolor: UIColor) {
@@ -92,7 +88,3 @@ class ThirdViewController: UIViewController {
         sender.clipsToBounds = true
     }
 }
-
-//#Preview {
-//    ThirdViewController()
-//}
