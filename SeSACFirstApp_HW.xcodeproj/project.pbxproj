@@ -11,6 +11,7 @@
 		C231A68D2B88958B00D87CC6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231A68C2B88958B00D87CC6 /* LoginViewController.swift */; };
 		C231A68F2B8895BE00D87CC6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231A68E2B8895BE00D87CC6 /* BaseViewController.swift */; };
 		C231A6912B88961F00D87CC6 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231A6902B88961F00D87CC6 /* Then.swift */; };
+		C231A6932B88999700D87CC6 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231A6922B88999700D87CC6 /* Observable.swift */; };
 		C234780F2B3C468B00238899 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C234780E2B3C468B00238899 /* MainViewController.swift */; };
 		C23478112B3C4CA000238899 /* NewHotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23478102B3C4CA000238899 /* NewHotViewController.swift */; };
 		C23478132B3C4E9200238899 /* SavedContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23478122B3C4E9200238899 /* SavedContentsViewController.swift */; };
@@ -36,6 +37,7 @@
 		C231A68C2B88958B00D87CC6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C231A68E2B8895BE00D87CC6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C231A6902B88961F00D87CC6 /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
+		C231A6922B88999700D87CC6 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		C234780E2B3C468B00238899 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C23478102B3C4CA000238899 /* NewHotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHotViewController.swift; sourceTree = "<group>"; };
 		C23478122B3C4E9200238899 /* SavedContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedContentsViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				C231A68C2B88958B00D87CC6 /* LoginViewController.swift */,
 				C231A68E2B8895BE00D87CC6 /* BaseViewController.swift */,
 				C231A6902B88961F00D87CC6 /* Then.swift */,
+				C231A6922B88999700D87CC6 /* Observable.swift */,
 			);
 			path = ReviewMVVM;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				C28134462B3AD6FF001ED300 /* ViewController.swift in Sources */,
 				C231A6912B88961F00D87CC6 /* Then.swift in Sources */,
 				C23478152B3C54DE00238899 /* MemberViewController.swift in Sources */,
+				C231A6932B88999700D87CC6 /* Observable.swift in Sources */,
 				C231A68D2B88958B00D87CC6 /* LoginViewController.swift in Sources */,
 				C2D076002B3D249C004D08DA /* ViewControllertest.swift in Sources */,
 				C2898B4F2B67A7C300AF9CE8 /* JoinMemberViewController.swift in Sources */,
